@@ -24,9 +24,10 @@ if(!isset($_SESSION['usuario']) && (!isset($_SESSION['senha']))){
 	<div id="topo">
 		<h1>Ola :<?php  echo $secao_usuario;   ?></h1>
 	</div>
-	<div id="topo">
-		<h1><a href="?equipamento">Solicitar equipamento :</a></h1>
+	<div id="">
+		<h1><a href="?equipamento">Solicitar equipamento : </a></h1>
 	</div>
+
 
 	<div id="topo">
 		<h1><a href="?sair">sair</a></h1>
