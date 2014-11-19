@@ -1,5 +1,6 @@
-<?php session_start();  ?>
-<?php
+<?php 
+// Iniciando ou reassumindo sessão
+session_start(); 
 // confirmando sessão 
 if(!isset($_SESSION['usuario']) && (!isset($_SESSION['senha']))){	
 	header("Location: ../login.php");	
@@ -26,7 +27,7 @@ if(!isset($_SESSION['usuario']) && (!isset($_SESSION['senha']))){
                 <tr height=70%><td></td></tr>
                 <tr height=70%><td></td></tr>
 				<tr height=70%><td>GERENCIAR CHAVES</td></tr>
-                <tr height=70%><td><a href ="emp_chave.php.php">Emprestar</a></td></tr>
+                <tr height=70%><td><a href ="emp_chave.php">Emprestar</a></td></tr>
                 <tr height=70%><td><a href ="">Historico</a></td></tr>
                 <tr height=70%><td><a href ="rel_emp_chave.php">Relatorios</a></td></tr>
                	<tr height=70%><td>GERENCIAR CHAVES</td></tr>
