@@ -1,4 +1,10 @@
 <?php session_start();  ?>
+<?php
+// confirmando sessão 
+if(!isset($_SESSION['usuario']) && (!isset($_SESSION['senha']))){	
+	header("Location: ../login.php");	
+}
+?>
 
 
 
