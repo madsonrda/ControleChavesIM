@@ -38,7 +38,7 @@ if(!isset($_SESSION['usuario']) && (!isset($_SESSION['senha']))){
 		header("Location: ../login.php");	
 	}
 	if(isset($_REQUEST['equipamento'])){
-		header("Location: main.php");
+		header("Location: ../main.php");
 	}
 	?>
 </body>
