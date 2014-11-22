@@ -1,14 +1,9 @@
-<?php 
+<?php
 // Iniciando ou reassumindo sessão
-session_start(); 
-// confirmando sessão 
-if(!isset($_SESSION['usuario']) && (!isset($_SESSION['senha']))){   
-    header("Location: ../login.php");      
-}
-// destruir sesssão
-if(isset($_REQUEST['sair'])){   
-    session_destroy();
-    header("Location: ../login.php");   
+session_start();
+// confirmando sessão
+if(!isset($_SESSION['usuario']) && (!isset($_SESSION['senha']))){
+    header("Location: ../login.php");
 }
 ?>
 <table align = "center" border="2"   cellpadding="0"  cellspacing="1" width=70%>
