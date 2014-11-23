@@ -33,7 +33,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`GrupoAcesso` (
   `GID` INT NOT NULL,
-  `GrupoAcessocol` VARCHAR(45) NULL,
+  `GrupoNome` VARCHAR(45) NULL,
   PRIMARY KEY (`GID`))
 ENGINE = InnoDB;
 
