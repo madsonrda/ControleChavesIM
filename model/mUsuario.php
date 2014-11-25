@@ -11,9 +11,7 @@ require_once("../db/db.class.php");
 class mUsuario extends Db {
     private $id;
     private $nome;
-    private $email;
     private $senha;
-    private $ativoem;
 
     public function getId(){
         return $this->id;
@@ -23,18 +21,9 @@ class mUsuario extends Db {
         return $this->nome;
     }
 
-    public function getEmail(){
-        return $this->email;
-    }
-
     public function getSenha(){
         return $this->senha;
     }
-
-    public function getAtivoem(){
-        return $this->ativoem;
-    }
-
 
     public function setId($Id){
         $this->id=$Id;
@@ -44,16 +33,8 @@ class mUsuario extends Db {
         $this->nome=$Nome;
     }
 
-    public function setEmail($Email){
-        $this->email=$Email;
-    }
-
     public function setSenha($Senha){
         $this->senha=$Senha;
-    }
-
-    public function setAtivoem($Ativoem){
-        $this->ativoem=$Ativoem;
     }
 
 }
