@@ -10,10 +10,6 @@ ini_set("display_errors",true);
 
 class Config {
 
-	function __construct(){
-		print "construtor config\n";
-		echo "merda";
-	}
 
     public function dateToBR($dataAmericana){
      $d = explode('-',$dataAmericana);

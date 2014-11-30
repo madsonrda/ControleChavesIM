@@ -17,10 +17,6 @@ class aChave extends mChave {
 
     protected $sqlDelete="delete from Chave where NumeroSala ='%s' ";
 
-        function __construct(){
-                parent::__construct();
-                print "\n construtor achave\n";
-        }
 
 
     public function Insert(){

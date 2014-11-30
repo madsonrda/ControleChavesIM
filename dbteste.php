@@ -14,11 +14,6 @@ class Db extends Config {
     private $pass = "123"; // servidor
     private $host = "localhost"; // em que maquina esta o BD
     private $database = "mydb"; // nome do BD
-        function __construct(){
-		parent::__construct();
-                print "construtor db\n";
-		echo "desgraça";
-        }
     private function Connect() {
         $conn = new PDO("mysql:host=$this->host;dbname=$this->database",
             $this->user, $this->pass);
