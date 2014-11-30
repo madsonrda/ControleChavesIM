@@ -14,6 +14,7 @@
 
                 <ul class="menu">
                     <li> <a class="menuItem" href="adm_usuario.php">Usuarios</a> </li>
+			<li> <a class="menuItem" href="adm_chave.php">Chaves</a> </li>
                 </ul>
             </div>
 

@@ -6,7 +6,7 @@
  * Time: 11:06
  */
 
-//require_once 'sm.php';
+require_once 'sm.php';
 require_once 'Chave.php';
 
 $a = new Chave();
@@ -23,8 +23,8 @@ if(isset($_POST['del'])){
 }
 
 
-//$sm->assign('lista',$a->Select());
+$sm->assign('lista',$a->Select());
 
 
-//$sm->display("teste.tpl");
+$sm->display("adm_chave.tpl");
 ?>
