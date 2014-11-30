@@ -11,13 +11,13 @@ require_once 'core/Usuario.php';
 
 $a = new Usuario();
 
-$a->setId($_GET['edit']);
+$a->setUID($_GET['edit']);
 $a->load();
 
 if(isset($_POST['nome'])){
     if($_POST['nome']!= ''){
 
-        $a->setNome($_POST['nome']);
+        $a->setUsuarioNome($_POST['nome']);
 
         $a->Update();
 
@@ -26,7 +26,7 @@ if(isset($_POST['nome'])){
 }// fim do esta setado os campos
 
 
-$dados = array('nome'=>$a->getNome());
+$dados = array('nome'=>$a->getUsuarioNome());
 
 $sm->assign("e",$dados);
 

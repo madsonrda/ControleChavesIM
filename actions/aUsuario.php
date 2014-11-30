@@ -11,7 +11,7 @@ class aUsuario extends mUsuario {
 
     protected $sqlInsert="insert into Usuario (UsuarioNome, UsuarioPassword) values ('%s', '%s')";
 
-    protected $sqlUpdate="update Usuario set nome='%s', senha='%s' where UID ='%s' ";
+    protected $sqlUpdate="update Usuario set UsuarioNome='%s', UsuarioPassword='%s' where UID ='%s' ";
 
     protected $sqlSelect="select * from Usuario where 1=1 %s %s";
 
@@ -20,7 +20,7 @@ class aUsuario extends mUsuario {
 
     public function Insert(){
         try {
-            $sql = sprintf($this->sqlInsert,$this->getNome(),$this->getSenha());
+            $sql = sprintf($this->sqlInsert,$this->getUsuarioNome(),$this->getUsuarioPassword());
             return $this->RunSelect($sql);
         } catch (Exception $e) {
             echo "Caught exception:",$e->getMessage(), "\n";
@@ -29,7 +29,7 @@ class aUsuario extends mUsuario {
 
     public function Update(){
         try {
-            $sql = sprintf($this->sqlUpdate, $this->getNome(), $this->getSenha(), $this->getId());
+            $sql = sprintf($this->sqlUpdate, $this->getUsuarioNome(), $this->getUsuarioPassword(), $this->getUID());
             return $this->RunSelect($sql);
         } catch (Exception $e) {
             echo "Caught exception:",$e->getMessage(), "\n";
@@ -50,7 +50,7 @@ class aUsuario extends mUsuario {
 
     public function Delete(){
         try {
-            $sql = sprintf($this->sqlDelete,$this->getId());
+            $sql = sprintf($this->sqlDelete,$this->getUID());
             return $this->RunQuery($sql);
         } catch (Exception $e) {
             echo "Caught exception:",$e->getMessage(), "\n";
@@ -59,9 +59,9 @@ class aUsuario extends mUsuario {
 
     public function load() {
         try {
-            $rs = $this->Select(sprintf("and id ='%s' ",$this->getId()));
-            $this->setId($rs[0]["id"]);
-            $this->setSenha($rs[0]["senha"]);
+            $rs = $this->Select(sprintf("and UID ='%s' ",$this->getUID()));
+            $this->setUID($rs[0]["UID"]);
+            $this->setUsuarioPassword($rs[0]["UsuarioPassord"]);
 
             return $this;
 

@@ -16,7 +16,7 @@ if(isset($_POST['nome']) and isset($_POST['senha']) ){
     if($_POST['nome']!= ''  and $_POST['senha']){
 
         // deve cadastrar
-        $a->setNome($_POST['nome']);
+        $a->setUsuarioNome($_POST['nome']);
         $a->criptSenha($_POST['senha']);
 
         $a->Insert();

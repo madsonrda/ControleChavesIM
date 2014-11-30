@@ -12,7 +12,7 @@ class Usuario extends aUsuario{
 
     public function criptSenha($senha){
         $cr = md5(sha1($senha));
-        $this->setSenha($cr);
+        $this->setUsuarioPassword($cr);
     }
 
 }

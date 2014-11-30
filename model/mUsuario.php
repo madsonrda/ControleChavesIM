@@ -9,32 +9,32 @@
 require_once("../db/db.class.php");
 
 class mUsuario extends Db {
-    private $id;
-    private $nome;
-    private $senha;
+    private $UID;
+    private $UsuarioNome;
+    private $UsuarioPassword;
 
-    public function getId(){
-        return $this->id;
+    public function getUID(){
+        return $this->UID;
     }
 
-    public function getNome(){
-        return $this->nome;
+    public function getUsuarioNome(){
+        return $this->UsuarioNome;
     }
 
-    public function getSenha(){
-        return $this->senha;
+    public function getUsuarioPassword(){
+        return $this->UsuarioPassword;
     }
 
-    public function setId($Id){
-        $this->id=$Id;
+    public function setUID($Id){
+        $this->id=$UID;
     }
 
-    public function setNome($Nome){
-        $this->nome=$Nome;
+    public function setUsuarioNome($Nome){
+        $this->UsuarioNome=$Nome;
     }
 
-    public function setSenha($Senha){
-        $this->senha=$Senha;
+    public function setUsuarioPassword($Senha){
+        $this->UsuarioPassword=$Senha;
     }
 
 }

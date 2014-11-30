@@ -16,7 +16,7 @@ if(isset($_POST['del'])){
     if(is_array($_POST['del'])){
 
         foreach ($_POST['del'] as $id) {
-            $a->setId($id);
+            $a->setUID($id);
             $a->Delete();
         }
     }
@@ -28,5 +28,5 @@ if(isset($_POST['del'])){
 $sm->assign('lista',$a->Select());
 
 
-$sm->display("adm_usuarios.tpl");
+$sm->display("teste.tpl");
 ?>
