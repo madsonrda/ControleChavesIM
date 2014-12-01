@@ -25,6 +25,11 @@ $dados = array('GID'=>$a->getGID(), 'GrupoNome'=>$a->getGrupoNome());
 $sm->assign("e",$dados);
 $listaChaves = $a->SelectChaves();
 $sm->assign("c",$listaChaves);
+require_once 'Chave.php';
+
+$b = new Chave();
+
+$sm->assign('Salas',$b->Select());
 
 $sm->display("adm_grupoacesso_edit.tpl");
 ?>

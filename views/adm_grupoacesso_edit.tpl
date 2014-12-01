@@ -34,5 +34,17 @@
 	 
 
   
-    </body>
-</html>
+	 <p> Lista de Salas disponiveis</p>
+         <table border="1">
+        <tr>
+            <td>Sala</td>
+        </tr>
+
+        {foreach from=$Salas item=p}
+        <tr>
+            <td>{$p.NumeroSala}</td>
+        </tr>
+        {/foreach}
+    </table>
+</body>
+	</html>
