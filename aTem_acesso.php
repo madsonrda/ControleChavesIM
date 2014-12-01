@@ -21,7 +21,7 @@ class aTem_acesso extends mTem_acesso {
 
     public function Insert(){
         try {
-            $sql = sprintf($this->sqlInsert,$this->getGID,$this->getNumeroSala());
+            $sql = sprintf($this->sqlInsert,$this->getGID(),$this->getNumeroSala());
             return $this->RunSelect($sql);
         } catch (Exception $e) {
             echo "Caught exception:",$e->getMessage(), "\n";

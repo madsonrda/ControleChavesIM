@@ -25,6 +25,7 @@ $dados = array('GID'=>$a->getGID(), 'GrupoNome'=>$a->getGrupoNome());
 $sm->assign("e",$dados);
 $listaChaves = $a->SelectChaves();
 $sm->assign("c",$listaChaves);
+$sm->assign("GID",$a->getGID());
 require_once 'Chave.php';
 
 $b = new Chave();
