@@ -12,13 +12,12 @@ require_once 'Tem_acesso.php';
 $a = new Tem_acesso();
 
 // delete das pessoas, as multiplas selecionadas na lista
-if(isset($_POST['del'])){
-    if(is_array($_POST['del'])){
+if(isset($_POST['GID'])and isset($_POST['NumeroSala'])){
+    if($_POST['GID']!='' and $_POST['NumeroSala']!=''){
 
-        foreach ($_POST['del'] as $GID) {
-            $a->setGID($GID);
+            $a->setGID($_POST['GID']);
+	$a->setNumeroSala($_POST['NumeroSala']);
             $a->Delete();
-        }
     }
 }
 

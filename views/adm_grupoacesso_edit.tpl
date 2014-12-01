@@ -47,5 +47,8 @@
         {/foreach}
     </table>
 		{include file="adm_temacesso_cad.tpl"}
+
+<p>
+		{include file="adm_temacesso_rem.tpl"}
 </body>
 	</html>

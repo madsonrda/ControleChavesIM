@@ -51,7 +51,7 @@ class aTem_acesso extends mTem_acesso {
 
     public function Delete(){
         try {
-            $sql = sprintf($this->sqlDelete,$this->getGID(),$this->getNumeroSala);
+            $sql = sprintf($this->sqlDelete,$this->getGID(),$this->getNumeroSala());
             return $this->RunQuery($sql);
         } catch (Exception $e) {
             echo "Caught exception:",$e->getMessage(), "\n";
