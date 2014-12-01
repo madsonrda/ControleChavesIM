@@ -5,35 +5,23 @@
  * Date: 25/11/14
  * Time: 09:51
  */
-require_once("mGrupoAcesso.php");
+require_once("mTem_acesso.php");
 
-class aGrupoAcesso extends mGrupoAcesso {
+class aTem_acesso extends mTem_acesso {
 
-    protected $sqlInsert="insert into GrupoAcesso (GrupoNome) values ('%s')";
+    protected $sqlInsert="insert into Tem_acesso (GID,NumeroSala) values ('%s','%s')";
 
-    protected $sqlUpdate="update GrupoAcesso set GrupoNome='%s' where GID ='%s' ";
+    protected $sqlUpdate="update Tem_acesso set NumeroSala='%s' where GID ='%s' ";
 
-    protected $sqlSelect="select * from GrupoAcesso where 1=1 %s %s";
+    protected $sqlSelect="select * from Tem_acesso where 1=1 %s %s";
 
-    protected $sqlDelete="delete from GrupoAcesso where GID ='%s' ";
-    
-    protected $sqlSelectChaves="select Chave.* from Tem_acesso, Chave
-				Where Tem_acesso.GID='%s' 
-				and Tem_acesso.NumeroSala=Chave.NumeroSala";
+    protected $sqlDelete="delete from Tem_acesso where GID ='%s' and NumeroSala = '%s'";
 
-   public function SelectChaves(){
-	try {
-            $sql = sprintf($this->sqlSelectChaves,$this->getGID());
-            return $this->RunSelect($sql);
-        } catch (Exception $e) {
-            echo "Caught exception:",$e->getMessage(), "\n";
-        }
-    }
 
 
     public function Insert(){
         try {
-            $sql = sprintf($this->sqlInsert,$this->getGrupoNome());
+            $sql = sprintf($this->sqlInsert,$this->getGID,$this->getNumeroSala());
             return $this->RunSelect($sql);
         } catch (Exception $e) {
             echo "Caught exception:",$e->getMessage(), "\n";
@@ -42,9 +30,8 @@ class aGrupoAcesso extends mGrupoAcesso {
 
     public function Update(){
         try {
-            $sql = sprintf($this->sqlUpdate,  $this->getGrupoNome(), $this->getGID());
+            $sql = sprintf($this->sqlUpdate,  $this->getNumeroSala(), $this->getGID());
             return $this->RunSelect($sql);
-echo "oi";
         } catch (Exception $e) {
             echo "Caught exception:",$e->getMessage(), "\n";
         }
@@ -64,7 +51,7 @@ echo "oi";
 
     public function Delete(){
         try {
-            $sql = sprintf($this->sqlDelete,$this->getGID());
+            $sql = sprintf($this->sqlDelete,$this->getGID(),$this->getNumeroSala);
             return $this->RunQuery($sql);
         } catch (Exception $e) {
             echo "Caught exception:",$e->getMessage(), "\n";
@@ -75,7 +62,7 @@ echo "oi";
         try {
             $rs = $this->Select(sprintf("and GID ='%s' ",$this->getGID()));
             $this->setGID($rs[0]["GID"]);
-            $this->setGrupoNome($rs[0]["GrupoNome"]);
+            $this->setNumeroSala($rs[0]["NumeroSala"]);
 
             return $this;
 

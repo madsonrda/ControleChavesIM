@@ -23,6 +23,8 @@ if(isset($_POST['GID']) and isset($_POST['GrupoNome'])){
 $dados = array('GID'=>$a->getGID(), 'GrupoNome'=>$a->getGrupoNome());
 
 $sm->assign("e",$dados);
+$listaChaves = $a->SelectChaves();
+$sm->assign("c",$listaChaves);
 
 $sm->display("adm_grupoacesso_edit.tpl");
 ?>

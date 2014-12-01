@@ -18,6 +18,21 @@
             <input name="GrupoNome" type="text" value="{$e.GrupoNome}"/>
             <br/>
             <input value="Salvar" type="submit"/>
-        </form>    
+        </form> 
+	<p>Lista de Salas com acesso</p>
+	 <table border="1">
+        <tr>
+            <td>Sala</td>
+        </tr>
+        
+        {foreach from=$c item=r}
+        <tr>
+            <td>{$r.NumeroSala}</td>
+        </tr>
+        {/foreach}
+    </table>
+	 
+
+  
     </body>
 </html>
