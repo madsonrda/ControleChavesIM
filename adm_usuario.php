@@ -7,7 +7,7 @@
  */
 
 require_once 'sm.php';
-require_once 'core/Usuario.php';
+require_once 'Usuario.php';
 
 $a = new Usuario();
 
@@ -15,8 +15,8 @@ $a = new Usuario();
 if(isset($_POST['del'])){
     if(is_array($_POST['del'])){
 
-        foreach ($_POST['del'] as $id) {
-            $a->setUID($id);
+        foreach ($_POST['del'] as $UID) {
+            $a->setUID($UID);
             $a->Delete();
         }
     }
@@ -28,5 +28,5 @@ if(isset($_POST['del'])){
 $sm->assign('lista',$a->Select());
 
 
-$sm->display("teste.tpl");
+$sm->display("adm_usuarios.tpl");
 ?>

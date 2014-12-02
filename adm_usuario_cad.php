@@ -7,17 +7,17 @@
  */
 
 require_once 'sm.php';
-require_once 'core/Usuario.php';
+require_once 'Usuario.php';
 
 $a = new Usuario();
 
-if(isset($_POST['nome']) and isset($_POST['senha']) ){
+if(isset($_POST['UsuarioNome']) and isset($_POST['UsuarioPassword']) ){
 
-    if($_POST['nome']!= ''  and $_POST['senha']){
+    if($_POST['UsuarioNome']!= ''  and $_POST['UsuarioPassword']){
 
         // deve cadastrar
-        $a->setUsuarioNome($_POST['nome']);
-        $a->criptSenha($_POST['senha']);
+        $a->setUsuarioNome($_POST['UsuarioNome']);
+        $a->criptSenha($_POST['UsuarioPassword']);
 
         $a->Insert();
 
@@ -27,5 +27,5 @@ if(isset($_POST['nome']) and isset($_POST['senha']) ){
 
 }// fim do isset
 
-$sm->display("adm_usuario_cad.tpl");
+$sm->display("adm_usuarios_cad.tpl");
 ?>

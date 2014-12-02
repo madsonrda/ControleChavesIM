@@ -18,6 +18,37 @@
             <input name="GrupoNome" type="text" value="{$e.GrupoNome}"/>
             <br/>
             <input value="Salvar" type="submit"/>
-        </form>    
-    </body>
-</html>
+        </form> 
+	<p>Lista de Salas com acesso</p>
+	 <table border="1">
+        <tr>
+            <td>Sala</td>
+        </tr>
+        
+        {foreach from=$c item=r}
+        <tr>
+            <td>{$r.NumeroSala}</td>
+        </tr>
+        {/foreach}
+    </table>
+	 
+
+  
+	 <p> Lista de Salas disponiveis</p>
+         <table border="1">
+        <tr>
+            <td>Sala</td>
+        </tr>
+
+        {foreach from=$Salas item=p}
+        <tr>
+            <td>{$p.NumeroSala}</td>
+        </tr>
+        {/foreach}
+    </table>
+		{include file="adm_temacesso_cad.tpl"}
+
+<p>
+		{include file="adm_temacesso_rem.tpl"}
+</body>
+	</html>

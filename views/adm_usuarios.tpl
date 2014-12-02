@@ -14,9 +14,9 @@
         {foreach from=$lista item=r}
             <tr>
                 <td>
-                    <input type="checkbox" name="del[]" value="{$r.id}"/>
+                    <input type="checkbox" name="del[]" value="{$r.UID}"/>
                 </td>
-                <td>{$r.nome}</td>
+                <td>{$r.UsuarioNome}</td>
 
                 <td>
                     <a href="#" onclick="win('adm_usuario_edit.php?edit={$r.id}',350,450)">Editar</a>
