@@ -1,0 +1,46 @@
+body{
+	background-image:url(bg.png); 
+	font: 300 16px Oswald;
+	font-weight: 700;
+	}
+		
+#formulario{
+	width:350px;
+	height:auto;
+	position:relative;
+	margin:0 auto;
+	overflow:hidden; 
+	border:solid 2px #ddd; 
+	border-radius:5px; 
+	padding:25px;
+}
+
+label{
+	width:80px; 
+	height:30px; 
+	position:relative;
+	float:left;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size:16px;
+	color:#333;
+	line-height:30px;
+	margin:2px;}
+		
+input{
+	width:260px;
+	height:30px;
+	position:relative;
+	float:left;
+	overflow:hidden; 
+	border:solid 1px #ddd; 
+	border-radius:5px; 
+	margin:2px; 
+	outline:none;
+}
+
+input#logar{
+	width:auto; 
+	height:auto; 
+	position: relative;
+	cursor:pointer;
+}
