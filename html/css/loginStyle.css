@@ -8,11 +8,12 @@ body{
 	width:350px;
 	height:auto;
 	position:relative;
-	margin:0 auto;
+	margin: 0 auto;
 	overflow:hidden; 
 	border:solid 2px #ddd; 
 	border-radius:5px; 
-	padding:25px;
+	padding: 25px;
+	bottom: -200px;
 }
 
 label{
