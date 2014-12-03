@@ -50,5 +50,19 @@
 
 <p>
 		{include file="adm_temacesso_rem.tpl"}
+
+         <p> Lista dos membros</p>
+         <table border="1">
+        <tr>
+            <td>Nome</td>
+        </tr>
+
+        {foreach from=$u item=q}
+        <tr>
+            <td>{$q.UsuarioNome}</td>
+        </tr>
+        {/foreach}
+    </table>
+
 </body>
 	</html>
