@@ -64,5 +64,19 @@
         {/foreach}
     </table>
 
+
+         <p> Lista dos usuarios disponiveis</p>
+         <table border="1">
+        <tr>
+            <td>Nome</td>
+        </tr>
+
+        {foreach from=$Membro item=s}
+        <tr>
+            <td>{$s.UsuarioNome}</td>
+        </tr>
+        {/foreach}
+    </table>
+
 </body>
 	</html>

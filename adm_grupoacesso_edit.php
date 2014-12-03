@@ -37,7 +37,12 @@ $sm->assign('Salas',$b->Select());
 //gerencia dos membros
 $listaUsuarios = $a->SelectUsuarios();//obtem lista dos membros
 $sm->assign("u",$listaUsuarios);
+//lista dos usuarios disponiveis
+require_once 'Usuario.php';
 
+$c = new Usuario();
+
+$sm->assign('Membro',$c->Select());
 
 $sm->display("adm_grupoacesso_edit.tpl");
 ?>
