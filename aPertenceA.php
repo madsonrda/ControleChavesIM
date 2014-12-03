@@ -51,7 +51,7 @@ class aPertenceA extends mPertenceA {
 
     public function Delete(){
         try {
-            $sql = sprintf($this->sqlDelete,$this->getGID(),$this->getUID);
+            $sql = sprintf($this->sqlDelete,$this->getGID(),$this->getUID());
             return $this->RunQuery($sql);
         } catch (Exception $e) {
             echo "Caught exception:",$e->getMessage(), "\n";

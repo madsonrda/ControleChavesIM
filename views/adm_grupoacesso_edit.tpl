@@ -68,15 +68,23 @@
          <p> Lista dos usuarios disponiveis</p>
          <table border="1">
         <tr>
+		<td>UID</td>
             <td>Nome</td>
         </tr>
 
         {foreach from=$Membro item=s}
         <tr>
             <td>{$s.UsuarioNome}</td>
+		<td>{$s.UID}</td>
         </tr>
         {/foreach}
     </table>
+
+                {include file="adm_pertencea_cad.tpl"}
+
+<p>
+                {include file="adm_pertencea_rem.tpl"}
+
 
 </body>
 	</html>
