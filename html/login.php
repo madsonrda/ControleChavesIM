@@ -10,18 +10,20 @@
 
 <body>
 	
-	<div>
+	<div class= "bg-primary">
 		<img src="ufba_logo.png">
 	</div>
 	
 
-	<div class= "bg-info" class="form-group" id="formulario">
-		<form name="form" method="post" enctype="multipart/form-data" id="form" >
+
+	<div class= "bg-primary" class="form-group" id="formulario">
+		<form name="form" method="post" enctype="multipart/form-data" id="form">
 			Gerenciador de Chaves do IM</br>
 			<label>Usuario</label>
 			<input class="form-control" type="text" name="usuario" id="usuario" placeholder="Nome de usuario">
 			<label>Senha</label>
-			<input class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+			<input class="form-control" type="password" name="senha" id="senha" placeholder="Senha">
+			<!-- <button type="button" class="btn btn-primary">Logar</button>     -->
 			<input class="form-control" type="submit" name="logar" id="logar" value="Logar" class="btn btn-primary"> 
 		</form>
 		<?php  include 'config/logar.php';  ?>
