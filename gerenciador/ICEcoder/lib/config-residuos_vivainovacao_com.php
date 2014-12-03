@@ -1,0 +1,30 @@
+<?php
+$ICEcoderUserSettings = array(
+"versionNo"		=> "4.0",
+"root"			=> "",
+"checkUpdates"		=> true,
+"openLastFiles"		=> true,
+"findFilesExclude"	=> array(".doc",".gif",".jpg",".jpeg",".pdf",".png",".swf",".xml",".zip"),
+"codeAssist"		=> true,
+"visibleTabs"		=> false,
+"lockedNav"		=> true,
+"tagWrapperCommand"	=> "ctrl+alt",
+"autoComplete"		=> "ctrl+space",
+"password"		=> "05c18782d20358b17cb7c5432e2d29274651e06e81110eed78a1",
+"bannedFiles"		=> array(),
+"bannedPaths"		=> array("/var/www/.git","/var/www/sites/all/modules","/var/www/sites/default/files"),
+"allowedIPs"		=> array("*"),
+"theme"			=> "default",
+"fontSize"		=> "13px",
+"lineWrapping"		=> true,
+"indentWithTabs"	=> true,
+"indentSize"		=> 4,
+"bugFilePaths"		=> array(),
+"bugFileCheckTimer"	=> 0,
+"bugFileMaxLines"	=> 0,
+"pluginPanelAligned"	=> "left",
+"plugins"		=> array(),
+"previousFiles"		=> "|home|vivainovacao|residuos.vivainovacao.com|protected|modules|userGroups|controllers|UserController.php,|home|vivainovacao|residuos.vivainovacao.com|protected|views|empresa|_form.php,|home|vivainovacao|residuos.vivainovacao.com|protected|config|main.php,|home|vivainovacao|residuos.vivainovacao.com|protected|modules|userGroups|views|user|profile.php,|home|vivainovacao|residuos.vivainovacao.com|themes|flatlab|views|layouts|main.php,|home|vivainovacao|residuos.vivainovacao.com|protected|controllers|BugController.php,|home|vivainovacao|residuos.vivainovacao.com|protected|controllers|UsuarioController.php,|home|vivainovacao|residuos.vivainovacao.com|protected|views|usuario|_form.php,|home|vivainovacao|residuos.vivainovacao.com|protected|models|Empresa.php,|home|vivainovacao|residuos.vivainovacao.com|protected|controllers|EmpresaController.php",
+"last10Files"		=> "|home|vivainovacao|residuos.vivainovacao.com|protected|controllers|EmpresaController.php,|home|vivainovacao|residuos.vivainovacao.com|protected|modules|userGroups|controllers|UserController.php,|home|vivainovacao|residuos.vivainovacao.com|themes|flatlab|views|layouts|main.php,|home|vivainovacao|residuos.vivainovacao.com|protected|models|Empresa.php,|home|vivainovacao|residuos.vivainovacao.com|protected|views|usuario|_form.php,|home|vivainovacao|residuos.vivainovacao.com|protected|views|usuario|create.php,|home|vivainovacao|residuos.vivainovacao.com|protected|controllers|BugController.php,|home|vivainovacao|residuos.vivainovacao.com|protected|controllers|UsuarioController.php,|home|vivainovacao|residuos.vivainovacao.com|protected|config|main.php,|home|vivainovacao|residuos.vivainovacao.com|protected|views|empresa|_form.php"
+);
+?>

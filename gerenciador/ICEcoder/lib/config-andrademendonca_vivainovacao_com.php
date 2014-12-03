@@ -1,0 +1,30 @@
+<?php
+$ICEcoderUserSettings = array(
+"versionNo"		=> "4.0",
+"root"	=> "",
+"checkUpdates"	=> true,
+"openLastFiles"	=> false,
+"findFilesExclude"	=> array(".doc",".gif",".jpg",".jpeg",".pdf",".png",".swf",".xml",".zip"),
+"codeAssist"	=> true,
+"visibleTabs"	=> true,
+"lockedNav"	=> true,
+"tagWrapperCommand"	=> "ctrl+alt",
+"autoComplete"	=> "ctrl+space",
+"password"	=> "8658dc17ea99082efe8959de310803913e313d24379d5f7b3dd8",
+"bannedFiles"	=> array(""),
+"bannedPaths"	=> array("/var/www/.git","/var/www/sites/all/modules","/var/www/sites/default/files"),
+"allowedIPs"	=> array("*"),
+"theme"	=> "default",
+"fontSize"	=> "14px",
+"lineWrapping"	=> true,
+"indentWithTabs"	=> true,
+"indentSize"	=> 4,
+"pluginPanelAligned"	=> "left",
+"bugFilePaths"	=> array(""),
+"bugFileCheckTimer"	=> 0,
+"bugFileMaxLines"	=> 0,
+"plugins"		=> array(),
+"previousFiles"		=> "|home|vivainovacao|andrademendonca.vivainovacao.com|themes|its_brain|views|layouts|main.php",
+"last10Files"		=> "|home|vivainovacao|andrademendonca.vivainovacao.com|themes|its_brain|views|layouts|main.php,|home|vivainovacao|andrademendonca.vivainovacao.com|themes|its_brain|js|template_documento.js,|home|vivainovacao|andrademendonca.vivainovacao.com|protected|controllers|UsuarioController.php,|home|vivainovacao|andrademendonca.vivainovacao.com|protected|views|documento|_formCreate.php,|home|vivainovacao|andrademendonca.vivainovacao.com|protected|views|documento|_form.php,|home|vivainovacao|andrademendonca.vivainovacao.com|protected|controllers|SiteController.php,|home|vivainovacao|andrademendonca.vivainovacao.com|protected|config|main.php,|home|vivainovacao|andrademendonca.vivainovacao.com|protected|controllers|DocumentoController.php,|home|vivainovacao|andrademendonca.vivainovacao.com|protected|views|documento|index.php,|home|vivainovacao|andrademendonca.vivainovacao.com|protected|views|documento|view.php"
+);
+?>
