@@ -23,14 +23,26 @@ if(isset($_POST['GID']) and isset($_POST['GrupoNome'])){
 $dados = array('GID'=>$a->getGID(), 'GrupoNome'=>$a->getGrupoNome());
 
 $sm->assign("e",$dados);
-$listaChaves = $a->SelectChaves();
+
+//gerencia de acesso a chaves
+$listaChaves = $a->SelectChaves();//obtem lista das chaves com acesso
 $sm->assign("c",$listaChaves);
 $sm->assign("GID",$a->getGID());
+//lista das chaves disponiveis
 require_once 'Chave.php';
 
 $b = new Chave();
 
 $sm->assign('Salas',$b->Select());
+//gerencia dos membros
+$listaUsuarios = $a->SelectUsuarios();//obtem lista dos membros
+$sm->assign("u",$listaUsuarios);
+//lista dos usuarios disponiveis
+require_once 'Usuario.php';
+
+$c = new Usuario();
+
+$sm->assign('Membro',$c->Select());
 
 $sm->display("adm_grupoacesso_edit.tpl");
 ?>

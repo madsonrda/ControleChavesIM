@@ -21,9 +21,23 @@ class aGrupoAcesso extends mGrupoAcesso {
 				Where Tem_acesso.GID='%s' 
 				and Tem_acesso.NumeroSala=Chave.NumeroSala";
 
+    protected $sqlSelectUsuarios="select Usuario.* from Pertence_a, Usuario
+                                Where Pertence_a.GID='%s' 
+                                and Pertence_a.UID=Usuario.UID";
+
+
    public function SelectChaves(){
 	try {
             $sql = sprintf($this->sqlSelectChaves,$this->getGID());
+            return $this->RunSelect($sql);
+        } catch (Exception $e) {
+            echo "Caught exception:",$e->getMessage(), "\n";
+        }
+    }
+
+   public function SelectUsuarios(){
+        try {
+            $sql = sprintf($this->sqlSelectUsuarios,$this->getGID());
             return $this->RunSelect($sql);
         } catch (Exception $e) {
             echo "Caught exception:",$e->getMessage(), "\n";
