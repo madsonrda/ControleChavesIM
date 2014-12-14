@@ -71,9 +71,14 @@ class ChaveController extends Controller
 		if(isset($_POST['Chave']))
 		{
 			$model->attributes=$_POST['Chave'];
-			$model->horario_entrada = date("Y-m-d H:i:s");
-			if($model->save())
+			if(!$this->duplicateKey($model->chave)){
+				if($model->save())
+					$this->redirect(array('index'));
+			}
+			else{
+				Yii::app()->user->setFlash('error', "Chave já cadastrada!");
 				$this->redirect(array('index'));
+			}
 		}
 
 		$this->render('create',array(
@@ -171,5 +176,17 @@ class ChaveController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function duplicateKey($chave){
+
+		$criteria = new CDbCriteria;
+		$criteria->condition = "chave = $chave";
+
+		$result = Chave::model()->find($criteria);
+
+		if ($result != NULL)
+			return true;
+		return false;
 	}
 }

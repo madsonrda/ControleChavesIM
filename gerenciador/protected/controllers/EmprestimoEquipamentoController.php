@@ -72,8 +72,24 @@ class EmprestimoEquipamentoController extends Controller
 		{
 			$model->attributes=$_POST['EmprestimoEquipamento'];
 			$model->horario_entrada = date("Y-m-d H:i:s");
-			if($model->save())
+			if($this->decrementQuantity($model->fk_equipamento)){
+				if(!$this->duplicateMat($model->matricula)){
+					if($model->save())
+						$this->redirect(array('index'));
+					else{
+						Yii::app()->user->setFlash('error', "Não foi possível salvar, contate o suporte.");
+						$this->redirect(array('index'));
+					}
+				}else{
+					Yii::app()->user->setFlash('error', "Matrícula {$model->matricula} não devolveu o equipamento.");
+					$this->redirect(array('index'));
+				}
+			}
+			else{
+				Yii::app()->user->setFlash('error', "Equipamento Esgotado");
 				$this->redirect(array('index'));
+
+			}
 		}
 
 		$this->render('create',array(
@@ -177,9 +193,46 @@ class EmprestimoEquipamentoController extends Controller
 
 		$id = $_GET['chave'];
 		$model_emprestimo_equipamento = EmprestimoEquipamento::model()->findByPk($id);
+		$id_equipamento = $model_emprestimo_equipamento->fk_equipamento;
+		$model_equipamento = Equipamento::model()->findByPk($id_equipamento);
+		$model_equipamento->quantidade = $model_equipamento->quantidade+1;
 		$model_emprestimo_equipamento->horario_entrega = date("Y-m-d H:i:s");
 		$model_emprestimo_equipamento->saveAttributes(array('horario_entrega'));
+		$model_equipamento->saveAttributes(array('quantidade'));
 		
 		$this->redirect("/gerenciador/emprestimoequipamento/");
+	}
+
+	public function duplicateMat($mat){
+
+		$criteria = new CDbCriteria;
+		$criteria->condition = "matricula = $mat AND horario_entrega IS NULL";
+
+		$result = EmprestimoEquipamento::model()->find($criteria);
+
+		if ($result != NULL)
+			return true;
+		return false;
+	}
+
+	protected function checkQuantity($id_equipamento){
+
+		$result = Equipamento::model()->findByPk($id_equipamento);
+		if($result->quantidade > 0)
+			return true;
+		return false;
+
+	}
+
+	protected function decrementQuantity($id_equipamento){
+
+		$result = Equipamento::model()->findByPk($id_equipamento);
+		if($result->quantidade > 0){
+			$result->quantidade = $result->quantidade-1;
+			$result->saveAttributes(array('quantidade'));
+			return true;
+		}
+		return false;
+
 	}
 }

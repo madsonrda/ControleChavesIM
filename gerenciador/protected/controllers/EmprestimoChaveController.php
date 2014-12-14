@@ -72,8 +72,13 @@ class EmprestimoChaveController extends Controller
 		{
 			$model->attributes=$_POST['EmprestimoChave'];
 			$model->horario_entrada = date("Y-m-d H:i:s");
-			if($model->save())
+			if(!$this->duplicateMat($model->matricula)){ 
+				if($model->save())
+					$this->redirect(array('index'));
+			}else{
+				Yii::app()->user->setFlash('error', "Matrícula {$model->matricula} não devolveu a chave.");
 				$this->redirect(array('index'));
+			}
 		}
 
 		$this->render('create',array(
@@ -183,5 +188,17 @@ class EmprestimoChaveController extends Controller
 		$model_emprestimochave->saveAttributes(array('horario_entrega'));
 		
 		$this->redirect("/gerenciador/emprestimochave/");
+	}
+
+	public function duplicateMat($mat){
+
+		$criteria = new CDbCriteria;
+		$criteria->condition = "matricula = $mat AND horario_entrega IS NULL";
+
+		$result = EmprestimoChave::model()->find($criteria);
+
+		if ($result != NULL)
+			return true;
+		return false;
 	}
 }
